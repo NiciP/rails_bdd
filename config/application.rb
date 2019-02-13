@@ -25,7 +25,6 @@ module Demo
       generate.routing_specs false
       generate.controller_specs false
       generate.system_tests false
-    config.generators.system_tests = nil
     end
   end
 end
