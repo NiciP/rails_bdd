@@ -24,4 +24,22 @@ Then("I should be on {string} page") do |article_page|
   visit article_page
 end
 
+Given("I am reading the article titled {string}") do |title|
+  @article = Article.find_by(title: title)
+end
+
+Given("I fill in a {string} with {string}") do |element, value|
+  within("#article_#{@article.id}") do
+  fill_in element, with: value
+  end
+end
+
+Given("I click {string}") do |element_text|
+  within("#article_#{@article.id}") do
+  click_on element_text
+  end
+end
+
+
+
 
